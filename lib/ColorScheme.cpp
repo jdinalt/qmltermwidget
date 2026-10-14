@@ -362,7 +362,7 @@ void ColorScheme::readColorEntry(QSettings * s , int index)
         colorStr = colorValue.toString();
         static const QRegularExpression hexColorPattern{"^#[0-9a-f]{6}$"_L1,
                                            QRegularExpression::CaseInsensitiveOption};
-        if (hexColorPattern.matchView(colorStr).hasMatch())
+        if (hexColorPattern.match(colorStr).hasMatch())
         {
             // If we got a match, colorStr size is 7
             r = colorStr.sliced(1, 2).toInt(nullptr, 16);
